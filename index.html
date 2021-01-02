@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haruka Ochiai's Portfolio</title>
+  <meta name="description" content="Haruka Ochiaiのポートフォリオサイト">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Italianno&display=swap" rel="stylesheet">
+  <!-- デフォルトCSSリセット -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"><!-- END デフォルトCSSリセット -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <nav id="nav_pc" class="container">
+      <ul class="nav_list">
+        <li><a href="#top" id="js_top"><span>トップ</span>Top</a></li>
+        <li><a href="#about" id="js_about"><span>自己紹介</span>About me</a></li>
+        <li><a href="#works" id="js_works"><span>実績</span>Works</a></li>
+        <li><a href="#skill" id="js_skill"><span>スキル</span>Skill</a></li>
+        <li><a href="#contact" id="js_contact"><span>お問い合わせ</span>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ハンバーガーメニュー(レスポンシブ) -->
+  <label for="menu" id="open_menu" class="hbg_menu">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </label>
+  <input id="menu" type="checkbox" name="checkbox_menu">
+  <label for="menu" id="back_menu" class="hbg_menu"></label>
+  <label for="menu" id="close_menu" class="hbg_menu">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </label>
+
+  <nav id="nav_mobile">
+    <ul class="nav_list">
+      <li><a href="#top" class="hbg_list"><span>トップ</span>Top</a></li>
+      <li><a href="#about" class="hbg_list"><span>自己紹介</span>About me</a></li>
+      <li><a href="#works" class="hbg_list"><span>実績</span>Works</a></li>
+      <li><a href="#skill" class="hbg_list"><span>スキル</span>Skill</a></li>
+      <li><a href="#contact" class="hbg_list"><span>お問い合わせ</span>Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Topページ -->
+  <section id="top" class="page_wrapper">
+    <div class="container centering">
+      <div class="page_contents load_fade">
+        <div class="top_title">
+          <h1>Haruka Ochiai</h1>
+        </div>
+      </div>
+      <div class="arrow_down">
+        <a href="#about">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+        </a>
+      </div>
+      <!-- Topへ戻るボタン -->
+      <div id="top_btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aboutページ -->
+  <section id="about" class="page_wrapper">
+    <div class="container centering">
+      <div class="page_contents scroll_fade">
+        <div class="heading">
+          <h2>About me</h2>
+        </div>
+        <div class="profile">
+          <div class="profile_photo">
+            <img src="img/MyPhoto.png" alt="HarukaOchiai">
+          </div>
+          <div class="profile_text">
+            <h3>Haruka Ochiai</h3>
+            <p>システムエンジニアとして2年ほど経験を積んだ後、現在はIT企業でサイトの制作やWebマーケティングの仕事をしています。このポートフォリオサイトは、デザインからコーディングまで自分でゼロから作成しました。</p>
+          </div>
+        </div>
+      </div>
+      <div class="arrow_down">
+        <a href="#works">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Worksページ -->
+  <section id="works" class="page_wrapper">
+    <div class="container centering">
+      <div class="page_contents scroll_fade">
+        <div class="heading">
+          <h2>Works</h2>
+          <p>私のこれまでの制作物を紹介します。制作物の画像をクリックすると詳細を見ることができます。</p>
+        </div>
+        <div class="works_wrapper">
+          <div id="work_03" class="work">
+            <a href="#!"><img src="img/work_03-1.png" alt="MyPortfolio"><span class="work_title">My Portfolio</span></a>
+          </div>
+          <div id="work_02" class="work">
+            <a href="#!"><img src="img/work_02-1.png" alt="wcbcafe"><span class="work_title">WCB CAFE（模写サイト）</span></a>
+          </div>
+          <div id="work_01" class="work">
+            <a href="#!"><img src="img/work_01-1.png" alt="kujiracafe"><span class="work_title">KUJIRA CAFE（模写サイト）</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="arrow_down">
+        <a href="#skill">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Worksページモーダルウィンドウ -->
+  <div id="modal_01" class="modal hidden">
+    <div class="close_modal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </div>
+    <div class="modal_flex">
+      <div class="modal_box1">
+        <div class="modal_info">
+          <h2>KUJIRA Cafe</h2>
+          <p>架空のカフェ「KUJIRA Cafe」のサイトを模写コーディングして作成したサイトです。</p>
+        </div>
+        <div class="modal_skill">
+          <h3>使用した技術など</h3>
+          <ul>
+            <li>HTML/CSS</li>
+            <li>レスポンシブデザイン</li>
+          </ul>
+        </div>
+        <div class="modal_btn">
+          <a href="https://harukaochiai.github.io/KUJIRACafe_practice/" target="_blank">サイトを見る</a>
+        </div>
+      </div>
+      <div class="modal_box2">
+        <ul id="thumbnail_01" class="modal_thumbnail"></ul>
+        <div class="modal_slideshow">
+          <div id="prev_01" class="arrow_prev">
+            <img src="img/arrow_prev.svg" alt="prev">
+          </div>
+          <div class="modal_img">
+            <img id="main_img_01">
+          </div>
+          <div id="next_01" class="arrow_next">
+            <img src="img/arrow_next.svg" alt="next">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal_02" class="modal hidden">
+    <div class="close_modal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </div>
+    <div class="modal_flex">
+      <div class="modal_box1">
+        <div class="modal_info">
+          <h2>WCB Cafe</h2>
+          <p>架空のカフェ「WCB Cafe」のサイトを模写コーディングして作成したサイトです。</p>
+        </div>
+        <div class="modal_skill">
+          <h3>使用した技術など</h3>
+          <ul>
+            <li>HTML/CSS</li>
+            <li>レスポンシブデザイン</li>
+          </ul>
+        </div>
+        <div class="modal_btn">
+          <a href="https://harukaochiai.github.io/WCBCafe_practice/" target="_blank">サイトを見る</a>
+        </div>
+      </div>
+      <div class="modal_box2">
+        <ul id="thumbnail_02" class="modal_thumbnail"></ul>
+        <div class="modal_slideshow">
+          <div id="prev_02" class="arrow_prev">
+            <img src="img/arrow_prev.svg" alt="prev">
+          </div>
+          <div class="modal_img">
+            <img id="main_img_02">
+          </div>
+          <div id="next_02" class="arrow_next">
+            <img src="img/arrow_next.svg" alt="next">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal_03" class="modal hidden">
+    <div class="close_modal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </div>
+    <div class="modal_flex">
+      <div class="modal_box1">
+        <div class="modal_info">
+          <h2>My Portfolio</h2>
+          <p>このポートフォリオサイトです。1枚のWebページ(ランディングページ)に仕上げました。レスポンシブ(スマートフォンなど画面幅の狭いデバイスでの表示)にも対応しています。背景の四つ葉のクローバーが舞い落ちるアニメーションは、jQueryを使用せずHTMLとCSSのみで実装してみました。お問い合わせフォームの送信機能は、まだ実装できるスキルがないので保留にしています。</p>
+        </div>
+        <div class="modal_skill">
+          <h3>使用した技術など</h3>
+          <ul>
+            <li>HTML/CSS</li>
+            <li>レスポンシブデザイン</li>
+            <li>jQuery</li>
+            <li>JavaScript</li>
+            <li>Chart.js(グラフ)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal_box2">
+        <ul id="thumbnail_03" class="modal_thumbnail"></ul>
+        <div class="modal_slideshow">
+          <div id="prev_03" class="arrow_prev">
+            <img src="img/arrow_prev.svg" alt="prev">
+          </div>
+          <div class="modal_img">
+            <img id="main_img_03">
+          </div>
+          <div id="next_03" class="arrow_next">
+            <img src="img/arrow_next.svg" alt="next">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mask" class="hidden"></div>
+
+  <!-- Skillページ -->
+  <section id="skill" class="page_wrapper">
+    <div class="container centering">
+      <div class="page_contents scroll_fade">
+        <div class="heading">
+          <h2>Skill</h2>
+          <p>私のWeb制作スキルをグラフで表しています。</p>
+        </div>
+        <!-- グラフ -->
+        <div class="chart_wrapper">
+          <canvas id="myBarChart"></canvas>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        </div>
+      </div>
+      <div class="arrow_down">
+        <a href="#contact">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contactページ -->
+  <section id="contact" class="page_wrapper">
+    <div class="container centering">
+      <div class="page_contents scroll_fade">
+        <div class="heading">
+          <h2>Contact</h2>
+          <p>ポートフォリオサイトを最後までご覧いただきありがとうございます。</p>
+        </div>
+        <div class="contact_form">
+          <form action="#">
+            <div>
+              <label for="name">お名前</label>
+              <input type="text" id="name" name="your_name" placeholder="Name">
+            </div>
+            <div>
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="your_email" placeholder="Email">
+            </div>
+            <div>
+              <label for="message">メッセージ</label>
+              <textarea name="your_message" id="message" placeholder="Message"></textarea>
+            </div>
+            <div id="submit">
+              <input type="submit" value="この内容で送信する" class="submit_btn">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- クローバーが舞う -->
+  <div id="clover_anime">
+    <div class="clover_1"><img src="img/clover.png"></div>
+    <div class="clover_2"><img src="img/clover.png"></div>
+    <div class="clover_3"><img src="img/clover.png"></div>
+    <div class="clover_4"><img src="img/clover.png"></div>
+    <div class="clover_5"><img src="img/clover.png"></div>
+    <div class="clover_6"><img src="img/clover.png"></div>
+    <div class="clover_7"><img src="img/clover.png"></div>
+    <div class="clover_8"><img src="img/clover.png"></div>
+    <div class="clover_9"><img src="img/clover.png"></div>
+    <div class="clover_10"><img src="img/clover.png"></div>
+    <div class="clover_11"><img src="img/clover.png"></div>
+    <div class="clover_12"><img src="img/clover.png"></div>
+    <div class="clover_13"><img src="img/clover.png"></div>
+    <div class="clover_14"><img src="img/clover.png"></div>
+    <div class="clover_15"><img src="img/clover.png"></div>
+    <div class="clover_16"><img src="img/clover.png"></div>
+    <div class="clover_17"><img src="img/clover.png"></div>
+    <div class="clover_18"><img src="img/clover.png"></div>
+    <div class="clover_19"><img src="img/clover.png"></div>
+    <div class="clover_20"><img src="img/clover.png"></div>
+  </div>
+
+  <!-- フッター -->
+  <footer>
+    <div class="container">
+				<p><small>&copy; 2020 Haruka Ochiai</small></p>
+    </div>
+  </footer>
+
+  <script src="js/chart.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1817 @@
+@charset "UTF-8";
+/* ==========================================================
+
+style.css
+
+============================================================ */
+/*_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+  PC（表示領域が767px以上の場合に適用するスタイル）
+
+  _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
+@media screen and (min-width: 767px) {
+
+  /* 共通部分
+  -------------------------------------------------------------*/
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color:#424242;
+    background-attachment: fixed;
+    background: linear-gradient(to bottom, #00aeff, #2bf8ff, #00fd9c, #ffed85, #ff8a8a, #ffa2db, #a09aff, #00aeff);
+    background-size: 700% 700%;
+    animation: gradation-anime 60s infinite;
+  }
+
+  @keyframes gradation-anime {
+    0%{background-position: 0 0;}
+    50%{background-position:100% 100%;}
+    100%{background-position: 0 0;}
+    }
+
+  a {
+    color:#424242;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+
+  /* ヘッダー
+  -------------------------------------------------------------*/
+  header {
+    height: 70px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 1px 5px rgba(158, 158, 158, 0.3);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+  }
+
+  #nav_pc {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav_list {
+    display: flex;
+    height: 100%;
+  }
+
+  .nav_list li {
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .nav_list a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    height: 100%;
+    padding: 0 30px;
+    transition: background-color 0.2s, color 0.2s;
+    position: relative;
+  }
+
+  .nav_list a span {
+    display: block;
+    font-size: 0.8rem;
+  }
+
+  .nav_list a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform : translateX(-50%);
+  bottom: 12px;
+  width: 0%;
+  height: 1px;
+  background:  #00aeff;
+  transition: all 0.2s;
+  }
+
+  .nav_list a:hover {
+    color: #00aeff;
+  }
+
+  .nav_list a:hover::after{
+    width: 60%;
+  }
+
+  /* ハンバーガーメニュー非表示
+  -------------------------------------------------------------*/
+  #open_menu,
+  #close_menu,
+  #nav_mobile {
+    display: none;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  /* 2の倍数のページに背景色をつける
+  -------------------------------------------------------------*/
+  .page_wrapper:nth-of-type(2n){
+    background-color: #fafafa;
+  }
+
+  /* サイトの全コンテンツの最大幅を揃える
+  -------------------------------------------------------------*/
+  .container {
+    max-width: 800px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  /* 各ページのコンテンツをページの中央に配置する
+  -------------------------------------------------------------*/
+  .centering {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  /* 各ページのコンテンツ
+  -------------------------------------------------------------*/
+  .page_contents {
+    width: 100%;
+    margin: 70px auto;
+  }
+
+    /* ロード時にフェードイン
+  -------------------------------------------------------------*/
+  .load_fade {
+    opacity : 0;
+    padding-top: 100px;
+    transition : all 1s;
+  }
+  
+  .done_load {
+    opacity : 1;
+    padding-top: 0px;
+  }
+
+  /* スクロール時にフェードイン
+    -------------------------------------------------------------*/
+    .scroll_fade {
+      opacity : 0;
+      transform : translate(0, 50px);
+      transition : all 1s;
+    }
+  
+    .done_scroll {
+      opacity : 1;
+      transform : translate(0, 0);
+    }
+
+   /* 矢印
+  -------------------------------------------------------------*/
+  .arrow_down {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 15px;
+    cursor: pointer;
+    user-select: none;
+    animation: arrow-animation 1.5s infinite;
+  }
+
+  @keyframes arrow-animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      bottom: -10px;
+      opacity: 1;
+    }
+  }
+
+  .arrow_down a {
+    display: block;
+  }
+
+  .arrow_down svg {
+    fill: #fff;
+    width: 100%;
+    height: auto;
+  }
+
+  .page_wrapper:nth-of-type(2n) .arrow_down svg {
+    fill: #7e7e7e;
+  }
+
+  /* Topへ戻るボタン */
+  #top_btn {
+    position: fixed;
+    z-index: 20;
+    right: 30px;
+    bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s;
+    display: none;
+  }
+
+  #top_btn svg {
+    fill: #7e7e7e;
+    width: 100%;
+    height: auto;
+  }
+
+  #top_btn:hover {
+    bottom: 45px;
+  }
+
+  /* 各ページの見出し
+  -------------------------------------------------------------*/
+  .heading {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .heading h2{
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .heading p {
+    letter-spacing: 0.03rem;
+  }
+
+  /* Topページ
+  -------------------------------------------------------------*/
+  .top_title h1 {
+    font-family: 'Italianno', serif;
+    color: #ffffff;
+    font-size: 6rem;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(145, 145, 145, 0.5);
+    user-select: none;
+  }
+
+  /*Aboutページ
+  -------------------------------------------------------------*/
+  .profile {
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .profile_photo {
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .profile_photo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .profile_text {
+    width: 100%;
+    letter-spacing: 0.05rem;
+  }
+
+  .profile_text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .profile_text p {
+    text-align: justify;
+  }
+
+  /* Worksページ
+  -------------------------------------------------------------*/
+  .works_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .work {
+    width: 47.5%;
+    height: auto;
+    margin-bottom: 40px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .work a {
+    display: block;
+  }
+
+  .work img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: all 0.2s;
+  }
+
+  .work_title {
+    color:#424242;
+    display: block;
+    margin-top: 7px;
+  }
+
+  .work:hover img {
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
+    transform: scale(1.05, 1.05);
+  }
+
+  /* Worksページモーダルウィンドウ
+  -------------------------------------------------------------*/
+  .modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 110;
+    background: #ffffff;
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+    overflow: auto;
+    opacity: 1;
+    transition: all 0.5s;
+  }
+
+  .modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .scroll_prevent {
+    overflow: hidden;
+  }
+
+  #mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  #mask.hidden {
+    display: none;
+  }
+
+  .close_modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+  }
+
+  .close_modal:hover {
+    opacity: 0.6;
+  }
+
+  .close_modal svg{
+    fill: #535353;
+  }
+
+  .modal_flex {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal_box1 {
+    width: 45%;
+    margin-right: 50px;
+  }
+
+  .modal_info {
+    margin-bottom: 40px;
+  }
+
+  .modal_info h2 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .modal_info h2::before,
+  .modal_info h2::after {
+    position: relative;
+    top: 1.9rem;
+    flex-grow: 1;
+    height: 1px;
+    content: "";
+    background-color: #adadad;
+  }
+
+  .modal_info h2::before {
+    margin-right: 20px;
+  }
+
+  .modal_info h2::after {
+    margin-left: 20px;
+  }
+
+  .modal_info p {
+    padding: 0 10px;
+  }
+
+  .modal_skill h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .modal_skill h3::before,
+  .modal_skill h3::after {
+    position: relative;
+    top: 1rem;
+    flex-grow: 1;
+    height: 1px;
+    content: "";
+    background-color: #adadad;
+  }
+
+  .modal_skill h3::before {
+    margin-right: 20px;
+  }
+
+  .modal_skill h3::after {
+    margin-left: 20px;
+  }
+
+  .modal_skill ul {
+    list-style: square inside;
+    padding: 0 10px;
+  }
+
+  .modal_btn {
+    margin-top: 40px;
+  }
+
+  .modal_btn a {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    background-color:#00aeff;
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .modal_btn a:hover {
+    top: 5px;
+    opacity: 0.7;
+  }
+
+  .modal_box2 {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal_thumbnail {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .modal_thumbnail li {
+    width: 85px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.4;
+    transition: all 0.2s;
+  }
+
+  .modal_thumbnail li:hover,
+  .modal_thumbnail li.current {
+    opacity: 1;
+  }
+  
+  .modal_thumbnail li:last-of-type {
+    margin-right: 0;
+  }
+  
+  .modal_thumbnail img {
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal_slideshow {
+    width: 100%;
+    display: flex;
+  }
+
+  .modal_img {
+    width: 100%;
+    user-select: none;
+  }
+
+  .modal_img img {
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .arrow_prev,
+  .arrow_next {
+    width: 37px;
+    transition: all 0.2s;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .arrow_prev:hover,
+  .arrow_next:hover {
+    opacity: 0.7;
+  }
+
+  .arrow_prev {
+    padding-right: 15px;
+  }
+
+  .arrow_next {
+    padding-left: 15px;
+  }
+
+  .arrow_prev img,
+  .arrow_next img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 50%;
+    transform : translateY(-50%);
+  }
+
+  /* Skillページ
+  -------------------------------------------------------------*/
+  .chart_wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  /* Contactページ
+  -------------------------------------------------------------*/
+  .contact_form {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  form div {
+    margin-bottom: 35px;
+  }
+
+  form label {
+    display: block;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px #fff solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 0.6;
+    user-select: none;
+  }
+
+  input:focus::placeholder,
+  textarea:focus::placeholder {
+    color: transparent;
+  }
+
+  textarea {
+    height: 10rem;
+  }
+
+  .submit_btn {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    background-color: #0066ff;
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .submit_btn:hover {
+    top: 5px;
+    background-color: #ffae00;
+  }
+
+  /* フッター
+  -------------------------------------------------------------*/
+  footer {
+    background: #424242;
+    text-align: center;
+    padding: 3px 0;
+  }
+
+  footer p {
+    color: #fff;
+    font-size: 0.875rem;
+  }
+
+  /* クローバーが舞う
+  -------------------------------------------------------------*/
+  #clover_anime div {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    opacity: 0;
+    user-select: none;
+    transform-origin: center;
+    animation-name: clover;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  #clover_anime .clover_1 {
+    left: 0px;
+    animation-duration: 10s;
+    animation-delay: 1s;
+  }
+  #clover_anime .clover_1 img {
+    width: 100px;
+    height: auto;
+  }
+
+  #clover_anime .clover_2 {
+    left: 100px;
+    animation-duration: 10.5s;
+    animation-delay: 3s;
+  }
+  #clover_anime .clover_2 img {
+    width: 150px;
+    height: auto;
+  }
+
+  #clover_anime .clover_3 {
+    left: 200px;
+    animation-duration: 13s;
+    animation-delay: 2s;
+  }
+  #clover_anime .clover_3 img {
+    width: 80px;
+    height: auto;
+  }
+
+  #clover_anime .clover_4 {
+    left: 300px;
+    animation-duration: 14s;
+    animation-delay: 4s;
+  }
+  #clover_anime .clover_4 img {
+    width: 50px;
+    height: auto;
+  }
+
+  #clover_anime .clover_5 {
+    left: 400px;
+    animation-duration: 12s;
+    animation-delay: 8s;
+  }
+  #clover_anime .clover_5 img {
+    width: 130px;
+    height: auto;
+  }
+
+  #clover_anime .clover_6 {
+    left: 500px;
+    animation-duration: 14s;
+    animation-delay: 7s;
+  }
+  #clover_anime .clover_6 img {
+    width: 60px;
+    height: auto;
+  }
+
+  #clover_anime .clover_7 {
+    left: 600px;
+    animation-duration: 15s;
+    animation-delay: 2s;
+  }
+  #clover_anime .clover_7 img {
+    width: 80px;
+    height: auto;
+  }
+
+  #clover_anime .clover_8 {
+    left: 700px;
+    animation-duration: 13s;
+    animation-delay: 0s;
+  }
+  #clover_anime .clover_8 img {
+    width: 160px;
+    height: auto;
+  }
+
+  #clover_anime .clover_9 {
+    left: 800px;
+    animation-duration: 12s;
+    animation-delay: 5s;
+  }
+  #clover_anime .clover_9 img {
+    width: 100px;
+    height: auto;
+  }
+
+  #clover_anime .clover_10 {
+    left: 900px;
+    animation-duration: 13.5s;
+    animation-delay: 1s;
+  }
+  #clover_anime .clover_10 img {
+    width: 50px;
+    height: auto;
+  }
+
+  #clover_anime .clover_11 {
+    left: 1000px;
+    animation-duration: 14.5s;
+    animation-delay: 3s;
+  }
+  #clover_anime .clover_11 img {
+    width: 140px;
+    height: auto;
+  }
+
+  #clover_anime .clover_12 {
+    left: 1100px;
+    animation-duration: 15.5s;
+    animation-delay: 2s;
+  }
+  #clover_anime .clover_12 img {
+    width: 70px;
+    height: auto;
+  }
+
+  #clover_anime .clover_13 {
+    left: 1200px;
+    animation-duration: 16s;
+    animation-delay: 5s;
+  }
+  #clover_anime .clover_13 img {
+    width: 100px;
+    height: auto;
+  }
+
+  #clover_anime .clover_14 {
+    left: 1300px;
+    animation-duration: 15s;
+    animation-delay: 8s;
+  }
+  #clover_anime .clover_14 img {
+    width: 50px;
+    height: auto;
+  }
+
+  #clover_anime .clover_15 {
+    left: 1400px;
+    animation-duration: 16s;
+    animation-delay: 7s;
+  }
+  #clover_anime .clover_15 img {
+    width: 140px;
+    height: auto;
+  }
+
+  #clover_anime .clover_16 {
+    left: 1500px;
+    animation-duration: 14.5s;
+    animation-delay: 2s;
+  }
+  #clover_anime .clover_16 img {
+    width: 100px;
+    height: auto;
+  }
+
+  #clover_anime .clover_17 {
+    left: 1600px;
+    animation-duration: 14s;
+    animation-delay: 5s;
+  }
+  #clover_anime .clover_17 img {
+    width: 60px;
+    height: auto;
+  }
+
+  #clover_anime .clover_18 {
+    left: 1700px;
+    animation-duration: 15s;
+    animation-delay: 9s;
+  }
+  #clover_anime .clover_18 img {
+    width: 130px;
+    height: auto;
+  }
+
+  #clover_anime .clover_19 {
+    left: 1800px;
+    animation-duration: 14s;
+    animation-delay: 11s;
+  }
+  #clover_anime .clover_19 img {
+    width: 80px;
+    height: auto;
+  }
+
+  #clover_anime .clover_20 {
+    left: 1900px;
+    animation-duration: 15s;
+    animation-delay: 3s;
+  }
+  #clover_anime .clover_20 img {
+    width: 110px;
+    height: auto;
+  }
+
+  @keyframes clover {
+    0% {
+      transform: translateY(0) rotate(0);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(50vh) rotate(180deg);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+}
+
+/*_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+レスポンシブ（表示領域が767px以下の場合に適用するスタイル）
+
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
+@media screen and (max-width: 767px) {
+
+  /* 共通部分
+  -------------------------------------------------------------*/
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color:#424242;
+    background-attachment: fixed;
+    background: linear-gradient(to bottom, #00aeff, #2bf8ff, #00fd9c, #ffed85, #ff8a8a, #ffa2db, #a09aff, #00aeff);
+    background-size: 700% 700%;
+    animation: gradation-anime 60s infinite;
+  }
+
+  @keyframes gradation-anime {
+    0%{background-position: 0 0;}
+    50%{background-position:100% 100%;}
+    100%{background-position: 0 0;}
+    }
+
+  a {
+    color:#424242;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+
+  /* ヘッダー
+  -------------------------------------------------------------*/
+  header {
+    display: none;
+  }
+
+  .nav_list a {
+    display: block;
+    color:#424242;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .nav_list a span {
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  /* ハンバーガーメニュー
+  -------------------------------------------------------------*/
+  #nav_mobile {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    z-index: 40;
+    height: 100%;
+    width: 25%;
+    min-width: 200px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    background-color: #ffffff;
+    opacity: 0.9;
+    transition: all 0.2s;
+    text-align: center;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll_prevent {
+    overflow: hidden;
+  }
+
+  #open_menu svg,
+  #close_menu svg {
+    fill: #535353;
+    width: 65%;
+    height: auto;
+  }
+  
+  #open_menu,
+  #close_menu {
+    position: fixed;
+    top: 15px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  #open_menu {
+    right: 15px;
+    z-index: 10;
+    opacity: 0.9;
+  }
+  
+  #close_menu {
+    right: -250px;
+    z-index: 50;
+    transition: all 0.2s;
+  }
+  
+  #menu {
+    /* チェックボックスの位置を固定する */
+    position: fixed;
+    /* チェックボックスを隠す */
+    left: -50vw;
+    /* チェックボックスを大きくする(見やすく) */
+    /* transform: scale(5); */
+  }
+
+  #menu:checked ~ #nav_mobile {
+    right: 0;
+  }
+
+  #menu:checked ~ #back_menu {
+    position: fixed;
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  #menu:checked ~ #close_menu {
+    right: 15px;
+  }
+
+   /* 2の倍数のページに背景色をつける
+  -------------------------------------------------------------*/
+  .page_wrapper:nth-of-type(2n){
+    background-color: #fafafa;
+  }
+
+  /* サイトの全コンテンツの最大幅を揃える
+  -------------------------------------------------------------*/
+  .container {
+    width: 100%;
+    padding: 0 8%;
+  }
+
+  /* 各ページのコンテンツをページの中央に配置する
+  -------------------------------------------------------------*/
+  .centering {
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  /* 各ページのコンテンツ
+  -------------------------------------------------------------*/
+  .page_contents {
+    width: 100%;
+    margin: 60px auto;
+  }
+
+  /* ロード時にフェードイン
+  -------------------------------------------------------------*/
+  .load_fade {
+    opacity : 0;
+    padding-top: 100px;
+    transition : all 1s;
+  }
+  
+  .done_load {
+    opacity : 1;
+    padding-top: 0px;
+  }
+
+  /* スクロール時にフェードイン
+    -------------------------------------------------------------*/
+  .scroll_fade {
+    opacity : 0;
+    transform : translate(0, 50px);
+    transition : all 1s;
+  }
+
+  .done_scroll {
+    opacity : 1;
+    transform : translate(0, 0);
+  }
+
+   /* 矢印
+  -------------------------------------------------------------*/
+  .arrow_down {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 15px;
+    cursor: pointer;
+    user-select: none;
+    animation: arrow-animation 1.5s infinite;
+  }
+
+  @keyframes arrow-animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      bottom: -10px;
+      opacity: 1;
+    }
+  }
+  
+  .arrow_down a {
+    display: block;
+  }
+
+  .arrow_down svg {
+    fill: #fff;
+    width: 100%;
+    height: auto;
+  }
+
+  .page_wrapper:nth-of-type(2n) .arrow_down svg {
+    fill: #7e7e7e;
+  }
+
+  #top_btn {
+    position: fixed;
+    z-index: 20;
+    right: 15px;
+    bottom: 35px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    user-select: none;
+    display: none;
+  }
+
+  #top_btn svg {
+    fill: #7e7e7e;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* 各ページの見出し
+  -------------------------------------------------------------*/
+  .heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .heading h2{
+    font-size: 2.7rem;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .heading p {
+    letter-spacing: 0.03rem;
+  }
+
+  /* Topページ
+  -------------------------------------------------------------*/
+  .top_title h1 {
+    font-family: 'Italianno', serif;
+    color: #ffffff;
+    font-size: 6rem;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.2;
+    text-shadow: 1px 1px 5px rgba(145, 145, 145, 0.5);
+    user-select: none;
+  }
+
+  /*Aboutページ
+  -------------------------------------------------------------*/
+  #about {
+    min-height: 100vh;
+  }
+
+  .profile {
+    margin-bottom: 20px;
+  }
+
+  .profile_photo {
+    width: 180px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .profile_photo img {
+    width: 100%;
+    height: auto;
+  }
+
+  .profile_text {
+    letter-spacing: 0.03rem;
+  }
+
+  .profile_text h3 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .profile_text p {
+    text-align: justify;
+  }
+
+  /* Worksページ
+  -------------------------------------------------------------*/
+  #works {
+    min-height: 100vh;
+  }
+
+  .work {
+    max-width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .work img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+
+  .work_title {
+    color:#424242;
+    display: block;
+    margin-top: 7px;
+  }
+
+  /* Worksページモーダルウィンドウ
+  -------------------------------------------------------------*/
+  .modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 110;
+    background: #ffffff;
+    width: 90%;
+    height: 80%;
+    padding: 60px 7%;
+    overflow: auto;
+    opacity: 1;
+    transition: all 0.5s;
+  }
+
+  .modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .scroll_prevent {
+    overflow: hidden;
+  }
+
+  #mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  #mask.hidden {
+    display: none;
+  }
+
+  .close_modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .close_modal svg{
+    fill: #535353;
+  }
+
+  .modal_flex {
+    width: 100%;
+  }
+
+  .modal_box1 {
+    width: 100%;
+    margin-right: 50px;
+    margin-bottom: 40px;
+  }
+
+  .modal_info {
+    margin-bottom: 30px;
+  }
+
+  .modal_info h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .modal_info h2::before,
+  .modal_info h2::after {
+    position: relative;
+    top: 1.5rem;
+    flex-grow: 1;
+    height: 1px;
+    content: "";
+    background-color: #adadad;
+  }
+
+  .modal_info h2::before {
+    margin-right: 15px;
+  }
+
+  .modal_info h2::after {
+    margin-left: 15px;
+  }
+
+  .modal_info p {
+    padding: 0 5px;
+    font-size: 0.9rem;
+  }
+
+  .modal_skill h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .modal_skill h3::before,
+  .modal_skill h3::after {
+    position: relative;
+    top: 0.9rem;
+    flex-grow: 1;
+    height: 1px;
+    content: "";
+    background-color: #adadad;
+  }
+
+  .modal_skill h3::before {
+    margin-right: 15px;
+  }
+
+  .modal_skill h3::after {
+    margin-left: 15px;
+  }
+
+  .modal_skill ul {
+    list-style: square inside;
+    padding: 0 5px;
+    font-size: 0.9rem;
+  }
+
+  .modal_btn {
+    margin-top: 30px;
+  }
+
+  .modal_btn a {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    background-color:#00aeff;
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .modal_box2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal_thumbnail {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .modal_thumbnail li {
+    width: 85px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.4;
+  }
+
+  .modal_thumbnail li.current {
+    opacity: 1;
+  }
+  
+  .modal_thumbnail li:last-of-type {
+    margin-right: 0;
+  }
+  
+  .modal_thumbnail img {
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal_slideshow {
+    width: 100%;
+    display: flex;
+  }
+
+  .modal_img {
+    width: 100%;
+    user-select: none;
+  }
+
+  .modal_img img {
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .arrow_prev,
+  .arrow_next {
+    width: 37px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .arrow_prev {
+    padding-right: 15px;
+  }
+
+  .arrow_next {
+    padding-left: 15px;
+  }
+
+  .arrow_prev img,
+  .arrow_next img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 50%;
+    transform : translateY(-50%);
+  }
+
+  /* Skillページ
+  -------------------------------------------------------------*/
+  .chart_wrapper {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  /* Contactページ
+  -------------------------------------------------------------*/
+  .contact_form {
+    padding-top: 10px;
+  }
+
+  form div {
+    margin-bottom: 30px;
+  }
+
+  form label {
+    display: block;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px #fff solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rrem;
+    width: 100%;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 0.6;
+    user-select: none;
+  }
+
+  input:focus::placeholder,
+  textarea:focus::placeholder {
+    color: transparent;
+  }
+
+  textarea {
+    height: 10rem;
+  }
+
+  .submit_btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    background-color:  #0066ff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* フッター
+  -------------------------------------------------------------*/
+  footer {
+    background:#424242;
+    text-align: center;
+    padding: 3px 0;
+  }
+  footer p {
+    color: #fff;
+    font-size: 0.875rem;
+  }
+
+  /* クローバーが舞う
+  -------------------------------------------------------------*/
+  #clover_anime div {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    opacity: 0;
+    user-select: none;
+    transform-origin: center;
+    animation-name: clover;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  #clover_anime .clover_1 {
+    left: 0px;
+    animation-duration: 10s;
+    animation-delay: 1s;
+  }
+  #clover_anime .clover_1 img {
+    width: 100px;
+    height: auto;
+  }
+
+  #clover_anime .clover_2 {
+    left: 100px;
+    animation-duration: 10.5s;
+    animation-delay: 3s;
+  }
+  #clover_anime .clover_2 img {
+    width: 150px;
+    height: auto;
+  }
+
+  #clover_anime .clover_3 {
+    left: 200px;
+    animation-duration: 13s;
+    animation-delay: 2s;
+  }
+  #clover_anime .clover_3 img {
+    width: 80px;
+    height: auto;
+  }
+
+  #clover_anime .clover_4 {
+    left: 300px;
+    animation-duration: 14s;
+    animation-delay: 4s;
+  }
+  #clover_anime .clover_4 img {
+    width: 50px;
+    height: auto;
+  }
+
+  #clover_anime .clover_5 {
+    left: 400px;
+    animation-duration: 12s;
+    animation-delay: 8s;
+  }
+  #clover_anime .clover_5 img {
+    width: 130px;
+    height: auto;
+  }
+
+  #clover_anime .clover_6 {
+    left: 500px;
+    animation-duration: 14s;
+    animation-delay: 7s;
+  }
+  #clover_anime .clover_6 img {
+    width: 60px;
+    height: auto;
+  }
+
+  #clover_anime .clover_7 {
+    left: 600px;
+    animation-duration: 15s;
+    animation-delay: 2s;
+  }
+  #clover_anime .clover_7 img {
+    width: 80px;
+    height: auto;
+  }
+
+  #clover_anime .clover_8 {
+    left: 700px;
+    animation-duration: 13s;
+    animation-delay: 0s;
+  }
+  #clover_anime .clover_8 img {
+    width: 160px;
+    height: auto;
+  }
+
+  #clover_anime .clover_9 {
+    left: 800px;
+    animation-duration: 12s;
+    animation-delay: 5s;
+  }
+  #clover_anime .clover_9 img {
+    width: 100px;
+    height: auto;
+  }
+
+  #clover_anime .clover_10 {
+    left: 900px;
+    animation-duration: 13.5s;
+    animation-delay: 1s;
+  }
+  #clover_anime .clover_10 img {
+    width: 50px;
+    height: auto;
+  }
+
+  #clover_anime .clover_11 {
+    left: 1000px;
+    animation-duration: 14.5s;
+    animation-delay: 3s;
+  }
+  #clover_anime .clover_11 img {
+    width: 140px;
+    height: auto;
+  }
+
+  #clover_anime .clover_12 {
+    left: 1100px;
+    animation-duration: 15.5s;
+    animation-delay: 2s;
+  }
+  #clover_anime .clover_12 img {
+    width: 70px;
+    height: auto;
+  }
+
+  #clover_anime .clover_13 {
+    left: 1200px;
+    animation-duration: 16s;
+    animation-delay: 5s;
+  }
+  #clover_anime .clover_13 img {
+    width: 100px;
+    height: auto;
+  }
+
+  #clover_anime .clover_14 {
+    left: 1300px;
+    animation-duration: 15s;
+    animation-delay: 8s;
+  }
+  #clover_anime .clover_14 img {
+    width: 50px;
+    height: auto;
+  }
+
+  #clover_anime .clover_15 {
+    left: 1400px;
+    animation-duration: 16s;
+    animation-delay: 7s;
+  }
+  #clover_anime .clover_15 img {
+    width: 140px;
+    height: auto;
+  }
+
+  #clover_anime .clover_16 {
+    left: 1500px;
+    animation-duration: 14.5s;
+    animation-delay: 2s;
+  }
+  #clover_anime .clover_16 img {
+    width: 100px;
+    height: auto;
+  }
+
+  #clover_anime .clover_17 {
+    left: 1600px;
+    animation-duration: 14s;
+    animation-delay: 5s;
+  }
+  #clover_anime .clover_17 img {
+    width: 60px;
+    height: auto;
+  }
+
+  #clover_anime .clover_18 {
+    left: 1700px;
+    animation-duration: 15s;
+    animation-delay: 9s;
+  }
+  #clover_anime .clover_18 img {
+    width: 130px;
+    height: auto;
+  }
+
+  #clover_anime .clover_19 {
+    left: 1800px;
+    animation-duration: 14s;
+    animation-delay: 11s;
+  }
+  #clover_anime .clover_19 img {
+    width: 80px;
+    height: auto;
+  }
+
+  #clover_anime .clover_20 {
+    left: 1900px;
+    animation-duration: 15s;
+    animation-delay: 3s;
+  }
+  #clover_anime .clover_20 img {
+    width: 110px;
+    height: auto;
+  }
+
+  @keyframes clover {
+    0% {
+      transform: translateY(0) rotate(0);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(50vh) rotate(180deg);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+}
