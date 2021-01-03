@@ -237,7 +237,7 @@ style.css
     box-shadow: 1px 3px 8px rgba(0,0,0,0.3);
     cursor: pointer;
     user-select: none;
-    transition: all 0.15s;
+    transition: bottom 0.15s;
     display: none;
   }
 
@@ -357,7 +357,7 @@ style.css
     transform: scale(1.05, 1.05);
   }
 
-  /* Worksページモーダルウィンドウ
+  /* Worksページのモーダルウィンドウ
   -------------------------------------------------------------*/
   .modal {
     position: fixed;
@@ -372,13 +372,7 @@ style.css
     height: 90%;
     padding: 5%;
     overflow: auto;
-    opacity: 1;
-    transition: all 0.5s;
-  }
-
-  .modal.hidden {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
   }
 
   .scroll_prevent {
@@ -393,9 +387,6 @@ style.css
     right: 0;
     left: 0;
     z-index: 100;
-  }
-
-  #mask.hidden {
     display: none;
   }
 
@@ -1011,10 +1002,6 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     -webkit-overflow-scrolling: touch;
   }
 
-  .scroll_prevent {
-    overflow: hidden;
-  }
-
   #open_menu svg,
   #close_menu svg {
     fill: #535353;
@@ -1168,6 +1155,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     fill: #7e7e7e;
   }
 
+  /* Topへ戻るボタン */
   #top_btn {
     position: fixed;
     z-index: 20;
@@ -1281,7 +1269,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     margin-top: 7px;
   }
 
-  /* Worksページモーダルウィンドウ
+  /* Worksページのモーダルウィンドウ
   -------------------------------------------------------------*/
   .modal {
     position: fixed;
@@ -1296,13 +1284,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     height: 80%;
     padding: 60px 7%;
     overflow: auto;
-    opacity: 1;
-    transition: all 0.5s;
-  }
-
-  .modal.hidden {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
   }
 
   .scroll_prevent {
@@ -1317,9 +1299,6 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     right: 0;
     left: 0;
     z-index: 100;
-  }
-
-  #mask.hidden {
     display: none;
   }
 

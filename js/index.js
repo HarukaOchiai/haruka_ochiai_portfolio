@@ -69,26 +69,26 @@ $(function(){
     });
   });
 
-  //モーダルウィンドウの表示・非表示
+  //モーダルウィンドウの表示
   $(function(){
     var work_01 = $('#work_01');
     var modal_01 = $('#modal_01');
     work_01.on('click', function(){
-      modal_01.removeClass('hidden');
+      modal_01.fadeIn(500);
     });
     var work_02 = $('#work_02');
     var modal_02 = $('#modal_02');
     work_02.on('click', function(){
-      modal_02.removeClass('hidden');
+      modal_02.fadeIn(500);
     });
     var work_03 = $('#work_03');
     var modal_03 = $('#modal_03');
     work_03.on('click', function(){
-      modal_03.removeClass('hidden');
+      modal_03.fadeIn(500);
     });
   });
 
-  //モーダルウィンドウ背景のマスク表示・非表示
+  //モーダルウィンドウの背景マスク表示・非表示
   $(function(){
     var work = $('.work');
     var mask = $('#mask');
@@ -97,19 +97,19 @@ $(function(){
     var html = $('html');
     //workをクリックした際
     work.on('click', function(){
-      mask.removeClass('hidden'); //マスクを表示する
+      mask.fadeIn(500); //マスクを表示する
       html.addClass('scroll_prevent'); //背景スクロールを防止する
     });
     //マスクをクリックした際
     mask.on('click', function(){
-      mask.addClass('hidden'); //マスクを非表示にする
-      modal.addClass('hidden'); //モーダルウィンドウを非表示にする
+      mask.fadeOut(500); //マスクを非表示にする
+      modal.fadeOut(500); //モーダルウィンドウを非表示にする
       html.removeClass('scroll_prevent'); //背景スクロール防止を解除する
     });
     //閉じるボタンをクリックした際
     close_modal.on('click', function(){
-      mask.addClass('hidden'); //マスクを非表示にする
-      modal.addClass('hidden'); //モーダルウィンドウを非表示にする
+      mask.fadeOut(500); //マスクを非表示にする
+      modal.fadeOut(500); //モーダルウィンドウを非表示にする
       html.removeClass('scroll_prevent'); //背景スクロール防止を解除する
     });
   });
