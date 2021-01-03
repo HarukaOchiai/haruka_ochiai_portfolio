@@ -120,13 +120,10 @@ style.css
 
   /* ハンバーガーメニュー非表示
   -------------------------------------------------------------*/
+  #menu,
   #open_menu,
   #close_menu,
   #nav_mobile {
-    display: none;
-  }
-
-  #menu {
     display: none;
   }
 
@@ -1042,8 +1039,6 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     position: fixed;
     /* チェックボックスを隠す */
     left: -50vw;
-    /* チェックボックスを大きくする(見やすく) */
-    /* transform: scale(5); */
   }
 
   #menu:checked ~ #nav_mobile {
