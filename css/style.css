@@ -18,12 +18,14 @@ style.css
   }
 
   body {
+    display: none; /*ページ読み込み時フェードインのJSに必要*/
     margin: 0;
     min-height: 100vh;
     font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
     line-height: 1.7;
     color:#424242;
     background-attachment: fixed;
+    background: #00aeff;
     background: linear-gradient(to bottom, #00aeff, #2bf8ff, #00fd9c, #ffed85, #ff8a8a, #ffa2db, #a09aff, #00aeff);
     background-size: 700% 700%;
     animation: gradation-anime 60s infinite;
@@ -924,12 +926,14 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
   }
 
   body {
+    display: none; /*ページ読み込み時フェードインのJSに必要*/
     margin: 0;
     min-height: 100vh;
     font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
     line-height: 1.7;
     color:#424242;
     background-attachment: fixed;
+    background: #00aeff;
     background: linear-gradient(to bottom, #00aeff, #2bf8ff, #00fd9c, #ffed85, #ff8a8a, #ffa2db, #a09aff, #00aeff);
     background-size: 700% 700%;
     animation: gradation-anime 60s infinite;
