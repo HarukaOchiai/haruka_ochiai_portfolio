@@ -1120,6 +1120,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     height: 80px;
     position: absolute;
     bottom: 15px;
+    opacity: 0;
     cursor: pointer;
     user-select: none;
     animation: arrow-animation 1.5s infinite;
