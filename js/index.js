@@ -12,6 +12,11 @@
   });
 }
 
+//ページ読み込み時
+$(function() {
+	$('body').fadeIn(1000); //1秒かけてフェードイン
+});
+
 //ロード時にフェードイン
 $(function(){
   $('html, body').animate({scrollTop: 0}, '1');
