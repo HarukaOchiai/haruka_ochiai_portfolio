@@ -1105,7 +1105,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
   .scroll_fade {
     opacity : 0;
     transform : translate(0, 50px);
-    transition : all 1s;
+    -webkit-transition: -webkit-transform 1s;
   }
 
   .done_scroll {
