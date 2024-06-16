@@ -52,6 +52,11 @@ style.css
     vertical-align: bottom;
   }
 
+  /* PC版では非表示にする */
+  .sp_ver {
+    display: none;
+  }
+
   /* ヘッダー
   -------------------------------------------------------------*/
   header {
@@ -201,6 +206,7 @@ style.css
 
   @keyframes arrow-animation {
     0% {
+      bottom: 15px;
       opacity: 0;
     }
     100% {
@@ -307,8 +313,14 @@ style.css
     letter-spacing: 0.05rem;
   }
 
-  .profile_text h3 {
+  .profile_text .name_jp {
     font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .profile_text .name_en {
+    font-size: 1rem;
+    font-weight: bold;
     margin-bottom: 10px;
   }
 
@@ -318,6 +330,19 @@ style.css
 
   /* Worksページ
   -------------------------------------------------------------*/
+  .github {
+    margin-top: 10px;
+  }
+  
+  .github a {
+    border-bottom: 1px solid;
+    transition: opacity 0.2s;
+  }
+
+  .github a:hover {
+    opacity: 0.6;
+  }
+  
   .works_wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -960,6 +985,11 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     vertical-align: bottom;
   }
 
+  /* SP版では非表示にする */
+  .pc_ver {
+    display: none;
+  }
+
   /* ヘッダー
   -------------------------------------------------------------*/
   header {
@@ -1134,10 +1164,6 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
       bottom: 15px;
       opacity: 0;
     }
-    90% {
-      bottom: -10px;
-      opacity: 1;
-    }
     100% {
       bottom: -10px;
       opacity: 1;
@@ -1231,8 +1257,15 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     letter-spacing: 0.03rem;
   }
 
-  .profile_text h3 {
-    font-size: 1.3rem;
+  .profile_text .name_jp {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .profile_text .name_en {
+    font-size: 1rem;
+    font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
@@ -1243,6 +1276,14 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
 
   /* Worksページ
   -------------------------------------------------------------*/
+  .github {
+    margin-top: 10px;
+  }
+  
+  .github a {
+    border-bottom: 1px solid;
+  }
+  
   .work {
     max-width: 100%;
     margin-bottom: 40px;
@@ -1388,7 +1429,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
   }
 
   .modal_btn {
-    margin-top: 30px;
+    margin-top: 40px;
   }
 
   .modal_btn a {
