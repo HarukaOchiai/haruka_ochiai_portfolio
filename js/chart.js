@@ -4,11 +4,11 @@
   var myBarChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-      labels: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'PHP', 'WordPress', 'Adobe Photoshop', 'Adobe Illustrator'],
+      labels: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'PHP', 'WordPress'],
       datasets: [
         {
           label: 'Level (%)',
-          data: [90, 85, 50, 60, 40, 50, 30, 40],
+          data: [90, 90, 30, 40, 20, 80],
           backgroundColor: "rgba(0, 174, 255, 0.5)"
         }
       ]
