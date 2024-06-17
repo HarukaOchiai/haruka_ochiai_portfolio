@@ -26,16 +26,16 @@ style.css
     color:#424242;
     background-attachment: fixed;
     background: #00aeff;
-    background: linear-gradient(to bottom, #00aeff, #2bf8ff, #00fd9c, #ffed85, #ff8a8a, #ffa2db, #a09aff, #00aeff);
+    /* background: linear-gradient(to bottom, #00aeff, #2bf8ff, #00fd9c, #ffed85, #ff8a8a, #ffa2db, #a09aff, #00aeff);
     background-size: 700% 700%;
-    animation: gradation-anime 60s infinite;
+    animation: gradation-anime 60s infinite; */
   }
 
-  @keyframes gradation-anime {
+  /* @keyframes gradation-anime {
     0%{background-position: 0 0;}
     50%{background-position:100% 100%;}
     100%{background-position: 0 0;}
-    }
+    } */
 
   a {
     color:#424242;
@@ -959,16 +959,16 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
     color:#424242;
     background-attachment: fixed;
     background: #00aeff;
-    background: linear-gradient(to bottom, #00aeff, #2bf8ff, #00fd9c, #ffed85, #ff8a8a, #ffa2db, #a09aff, #00aeff);
+    /* background: linear-gradient(to bottom, #00aeff, #2bf8ff, #00fd9c, #ffed85, #ff8a8a, #ffa2db, #a09aff, #00aeff);
     background-size: 700% 700%;
-    animation: gradation-anime 60s infinite;
+    animation: gradation-anime 60s infinite; */
   }
 
-  @keyframes gradation-anime {
+  /* @keyframes gradation-anime {
     0%{background-position: 0 0;}
     50%{background-position:100% 100%;}
     100%{background-position: 0 0;}
-    }
+    } */
 
   a {
     color:#424242;
